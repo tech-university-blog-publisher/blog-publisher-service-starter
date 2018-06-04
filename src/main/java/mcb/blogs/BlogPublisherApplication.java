@@ -1,4 +1,4 @@
-package mcb.todo;
+package mcb.blogs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,9 +8,9 @@ import java.util.Collections;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-public class TodoApplication {
+public class BlogPublisherApplication {
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(TodoApplication.class);
+        SpringApplication app = new SpringApplication(BlogPublisherApplication.class);
         app.setDefaultProperties(Collections
                 .singletonMap("server.port", "8083"));
         app.run(args);

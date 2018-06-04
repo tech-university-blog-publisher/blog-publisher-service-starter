@@ -1,6 +1,6 @@
-package mcb.todo.todolist.restmodel;
+package mcb.blogs.publisher.restmodel;
 
-public class CreateTodoListRequest {
+public class CreateUserRequest {
     private String name;
 
     public String getName() {

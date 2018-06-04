@@ -1,23 +1,22 @@
-package mcb.todo.todolist;
+package mcb.blogs.publisher;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class TodoList {
+public class UserList {
     @Id
     @GeneratedValue
     private Long id;
-
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<TodoItem> items;
+    private List<BlogPostList> posts;
 
-    protected TodoList() {
+    protected UserList() {
     }
 
-    public TodoList(String name) {
+    public UserList(String name) {
         this.name = name;
     }
 
@@ -29,7 +28,7 @@ public class TodoList {
         return name;
     }
 
-    public List<TodoItem> getItems() {
-        return items;
+    public List<BlogPostList> getPosts() {
+        return posts;
     }
 }

@@ -1,6 +1,6 @@
-package mcb.todo.todolist;
+package mcb.blogs.publisher;
 
-import mcb.todo.todolist.restmodel.CreateTodoListRequest;
+import mcb.blogs.publisher.restmodel.CreateUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,20 +13,20 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 
 @Controller
-@RequestMapping("/todos")
-public class TodoService {
-    private TodoListRepository repository;
+@RequestMapping("/users")
+public class BlogService {
+    private BlogListRepository repository;
 
     @Autowired
-    public TodoService(TodoListRepository repository) {
+    public BlogService(BlogListRepository repository) {
         this.repository = repository;
     }
 
     @PostMapping
-    public Mono<ResponseEntity> createTodoList(@RequestBody Mono<CreateTodoListRequest> request) {
-        return request.map(r -> this.repository.save(new TodoList(r.getName())))
-                .map(TodoList::getId)
-                .map(id -> ResponseEntity.created(URI.create("/todo/" + id)).build());
+    public Mono<ResponseEntity> createUser(@RequestBody Mono<CreateUserRequest> request) {
+        return request.map(r -> this.repository.save(new UserList(r.getName())))
+                .map(UserList::getId)
+                .map(id -> ResponseEntity.created(URI.create("/users/" + id)).build());
     }
 
     @GetMapping
