@@ -12,7 +12,7 @@ public class BlogPostList {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<BlogPost> items;
+    private List<BlogPost> posts;
 
     protected BlogPostList() {
     }
@@ -30,6 +30,6 @@ public class BlogPostList {
     }
 
     public List<BlogPost> getItems() {
-        return items;
+        return posts;
     }
 }

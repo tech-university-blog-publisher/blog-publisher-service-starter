@@ -15,10 +15,10 @@ import java.net.URI;
 @Controller
 @RequestMapping("/users")
 public class BlogService {
-    private BlogListRepository repository;
+    private UserListRepository repository;
 
     @Autowired
-    public BlogService(BlogListRepository repository) {
+    public BlogService(UserListRepository repository) {
         this.repository = repository;
     }
 

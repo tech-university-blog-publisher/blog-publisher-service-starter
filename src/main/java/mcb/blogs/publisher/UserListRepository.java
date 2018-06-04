@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface BlogListRepository extends CrudRepository<UserList, Long> {
+public interface UserListRepository extends CrudRepository<UserList, Long> {
     @Override
     <S extends UserList> S save(S s);
 
