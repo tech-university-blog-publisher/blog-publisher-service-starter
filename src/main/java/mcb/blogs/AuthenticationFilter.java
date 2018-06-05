@@ -24,6 +24,7 @@ public class AuthenticationFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest r, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // inject BlogUser for request
+
         var blogUser = WebApplicationContextUtils
                 .getRequiredWebApplicationContext(getFilterConfig().getServletContext())
                 .getAutowireCapableBeanFactory().getBean(BlogUser.class);
